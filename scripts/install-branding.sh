@@ -76,6 +76,24 @@ echo -e "${GREEN}✓${NC} Installed branding_loader.py"
 cp "$CUSTOM_DIR/dashboard_patch.py" "$BRANDING_MODULES_DIR/"
 echo -e "${GREEN}✓${NC} Installed dashboard_patch.py"
 
+# Install static assets
+STATIC_DEST="$VENV_PATH/static"
+if [ -d "$STATIC_DEST" ]; then
+    echo "Installing static assets..."
+    cp "$CUSTOM_DIR/static/"*.css "$STATIC_DEST/"
+    # Only copy logo if not present to avoid overwriting existing custom logos
+    if [ ! -f "$STATIC_DEST/hive-studio-logo.png" ]; then
+        # Check if we have a logo in the source
+        if [ -f "$CUSTOM_DIR/static/hive-studio-logo.png" ]; then
+            cp "$CUSTOM_DIR/static/hive-studio-logo.png" "$STATIC_DEST/"
+            cp "$CUSTOM_DIR/static/hive-studio-favicon.png" "$STATIC_DEST/" 2>/dev/null || true
+        fi
+    fi
+    echo -e "${GREEN}✓${NC} Installed static assets (CSS themes)"
+else
+    echo -e "${YELLOW}⚠${NC}  Static directory not found at $STATIC_DEST"
+fi
+
 # Patch the dashboard __init__.py to apply branding on startup
 INIT_FILE="$BRANDING_MODULES_DIR/__init__.py"
 
