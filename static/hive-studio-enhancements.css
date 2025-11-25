@@ -1,0 +1,449 @@
+/* Hive Studio Enhanced Styles */
+/* Add these styles to enhance the dashboard with Hive Studio branding */
+
+/* ==================== */
+/* Custom Scrollbar     */
+/* ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--charcoal, #1A1A1A);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--hive-gold, #DAA520);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--honey-bright, #FFBF00);
+}
+
+/* ==================== */
+/* Custom Selection     */
+/* ==================== */
+::selection {
+  background-color: var(--hive-gold, #DAA520);
+  color: var(--charcoal, #1A1A1A);
+}
+
+::-moz-selection {
+  background-color: var(--hive-gold, #DAA520);
+  color: var(--charcoal, #1A1A1A);
+}
+
+/* ==================== */
+/* Hexagon Shapes       */
+/* ==================== */
+.hexagon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.hexagon-button {
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  background: linear-gradient(to right, var(--hive-gold, #DAA520), var(--honey-bright, #FFBF00));
+  color: var(--charcoal, #1A1A1A);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.hexagon-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--glow-honey, rgba(255, 191, 0, 0.6));
+}
+
+.hexagon-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  flex-shrink: 0;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background: var(--hive-gold, #DAA520);
+}
+
+/* Floating hexagon decorative element */
+.floating-hexagon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--bg-gold-10, rgba(218, 165, 32, 0.1)), var(--bg-honey-10, rgba(255, 191, 0, 0.1)));
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ==================== */
+/* Gradient Effects     */
+/* ==================== */
+.gradient-gold {
+  background: linear-gradient(to right, var(--hive-gold, #DAA520), var(--honey-bright, #FFBF00));
+}
+
+.gradient-gold-vertical {
+  background: linear-gradient(to bottom, var(--hive-gold, #DAA520), var(--honey-bright, #FFBF00));
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, 
+    var(--hive-gold, #DAA520) 0%, 
+    var(--hive-gold, #DAA520) 30%, 
+    var(--honey-bright, #FFBF00) 60%, 
+    rgba(255, 191, 0, 0.8) 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.3;
+  padding-bottom: 0.2em;
+}
+
+/* ==================== */
+/* Glow Effects         */
+/* ==================== */
+.glow-gold {
+  box-shadow: 0 0 20px var(--glow-gold, rgba(218, 165, 32, 0.5));
+}
+
+.glow-honey {
+  box-shadow: 0 0 30px var(--glow-honey, rgba(255, 191, 0, 0.6));
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px var(--glow-gold, rgba(218, 165, 32, 0.5));
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-hexagon {
+  box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
+}
+
+/* ==================== */
+/* Glassmorphism        */
+/* ==================== */
+.glass-card {
+  background: rgba(42, 42, 42, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid var(--border-gold-30, rgba(218, 165, 32, 0.3));
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.glass-card:hover {
+  border-color: rgba(218, 165, 32, 0.5);
+  box-shadow: 0 0 30px var(--glow-gold, rgba(218, 165, 32, 0.5));
+  transition: all 0.3s ease;
+}
+
+/* ==================== */
+/* Cards & Containers   */
+/* ==================== */
+.hive-card {
+  background: var(--charcoal-light, #2A2A2A);
+  border: 1px solid var(--border-gold-20, rgba(218, 165, 32, 0.2));
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hive-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold-30, rgba(218, 165, 32, 0.3));
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ==================== */
+/* Buttons              */
+/* ==================== */
+.btn-primary {
+  background: linear-gradient(to right, var(--hive-gold, #DAA520), var(--honey-bright, #FFBF00));
+  color: var(--charcoal, #1A1A1A);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--glow-honey, rgba(255, 191, 0, 0.6));
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--hive-gold, #DAA520);
+  border: 2px solid var(--hive-gold, #DAA520);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-gold-10, rgba(218, 165, 32, 0.1));
+  border-color: var(--honey-bright, #FFBF00);
+  color: var(--honey-bright, #FFBF00);
+}
+
+/* ==================== */
+/* Typography           */
+/* ==================== */
+.heading-gold {
+  color: var(--hive-gold, #DAA520);
+  font-weight: 700;
+}
+
+.heading-gradient {
+  background: linear-gradient(90deg, 
+    var(--hive-gold, #DAA520) 0%, 
+    var(--hive-gold, #DAA520) 30%, 
+    var(--honey-bright, #FFBF00) 60%, 
+    rgba(255, 191, 0, 0.8) 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+h1.hive-heading {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-white, #FFFFFF);
+}
+
+h2.hive-heading {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--text-white, #FFFFFF);
+}
+
+h3.hive-heading {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--text-white, #FFFFFF);
+}
+
+/* ==================== */
+/* Animations           */
+/* ==================== */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--glow-gold, rgba(218, 165, 32, 0.4));
+  }
+  50% {
+    box-shadow: 0 0 20px var(--glow-gold, rgba(218, 165, 32, 0.8));
+  }
+}
+
+.pulse-gold {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* ==================== */
+/* Utility Classes      */
+/* ==================== */
+.bg-charcoal {
+  background-color: var(--charcoal, #1A1A1A);
+}
+
+.bg-charcoal-light {
+  background-color: var(--charcoal-light, #2A2A2A);
+}
+
+.text-gold {
+  color: var(--hive-gold, #DAA520);
+}
+
+.text-honey {
+  color: var(--honey-bright, #FFBF00);
+}
+
+.text-white {
+  color: var(--text-white, #FFFFFF);
+}
+
+.text-gray-200 {
+  color: var(--text-gray-200, #E5E7EB);
+}
+
+.border-gold {
+  border-color: var(--hive-gold, #DAA520);
+}
+
+.border-gold-30 {
+  border-color: var(--border-gold-30, rgba(218, 165, 32, 0.3));
+}
+
+/* ==================== */
+/* Transitions          */
+/* ==================== */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-fast {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== */
+/* Honey Drip Effect    */
+/* (Optional - for fun) */
+/* ==================== */
+.honey-drip {
+  position: relative;
+}
+
+.honey-drip::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--honey-bright, #FFBF00), var(--hive-gold, #DAA520));
+  border-radius: 0 0 50% 50%;
+  animation: drip 3s ease-in-out infinite;
+}
+
+@keyframes drip {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 1;
+  }
+}
+
+/* ==================== */
+/* Honey Glow Effect    */
+/* ==================== */
+.honey-glow {
+  position: relative;
+}
+
+.honey-glow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 191, 0, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.honey-glow:hover::after {
+  opacity: 1;
+}
+
+/* ==================== */
+/* Badge Styles         */
+/* ==================== */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--hive-gold, #DAA520), var(--honey-bright, #FFBF00));
+  color: var(--charcoal, #1A1A1A);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  border: 2px solid var(--hive-gold, #DAA520);
+  color: var(--hive-gold, #DAA520);
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: transparent;
+}
+
+/* ==================== */
+/* Status Indicators    */
+/* ==================== */
+.status-active {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.status-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--honey-bright, #FFBF00);
+  box-shadow: 0 0 10px var(--glow-honey, rgba(255, 191, 0, 0.6));
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ==================== */
+/* Responsive Utilities */
+/* ==================== */
+@media (max-width: 768px) {
+  .hexagon-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  h1.hive-heading {
+    font-size: 1.875rem;
+  }
+  
+  h2.hive-heading {
+    font-size: 1.5rem;
+  }
+  
+  .hive-card {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Spec Kitty Branding Configuration",
+  "description": "Configuration schema for customizing Spec Kitty branding",
+  "type": "object",
+  "properties": {
+    "projectName": {
+      "type": "string",
+      "description": "The display name for your project (e.g., 'My Project Spec')",
+      "default": "Spec Kitty"
+    },
+    "shortName": {
+      "type": "string",
+      "description": "Short name used in headers (e.g., 'MySpec')",
+      "default": "Spec Kitty"
+    },
+    "welcomeMessage": {
+      "type": "string",
+      "description": "Welcome message shown on dashboard",
+      "default": "Welcome to Spec Kitty!"
+    },
+    "logoPath": {
+      "type": "string",
+      "description": "Path to logo image (relative to .kittify/ or absolute path)",
+      "default": "/static/spec-kitty.png"
+    },
+    "faviconPath": {
+      "type": "string",
+      "description": "Path to favicon (relative to .kittify/ or absolute path)",
+      "default": "/static/spec-kitty.png"
+    },
+    "colors": {
+      "type": "object",
+      "description": "Color scheme customization",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Primary brand color (hex)",
+          "default": "#A7C7E7"
+        },
+        "secondary": {
+          "type": "string",
+          "description": "Secondary brand color (hex)",
+          "default": "#7BB661"
+        },
+        "accent": {
+          "type": "string",
+          "description": "Accent color (hex)",
+          "default": "#FFF275"
+        },
+        "background": {
+          "type": "string",
+          "description": "Background color (hex)",
+          "default": "#FFFDF7"
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "description": "Footer customization",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Footer text",
+          "default": "Powered by Spec Kitty"
+        },
+        "link": {
+          "type": "string",
+          "description": "Footer link URL",
+          "default": ""
+        }
+      }
+    }
+  },
+  "required": ["projectName"]
+}

@@ -1,0 +1,17 @@
+{
+  "projectName": "Energy Monitor API",
+  "shortName": "Energy API",
+  "welcomeMessage": "Welcome to Real-Time Energy Monitoring!",
+  "logoPath": "/static/energy-logo.png",
+  "faviconPath": "/static/energy-favicon.png",
+  "colors": {
+    "primary": "#1E40AF",
+    "secondary": "#10B981",
+    "accent": "#F59E0B",
+    "background": "#F9FAFB"
+  },
+  "footer": {
+    "text": "Powered by Energy Monitor API",
+    "link": ""
+  }
+}
