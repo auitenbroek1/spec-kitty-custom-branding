@@ -61,22 +61,29 @@ A professional light theme and branding customization package for [Spec Kitty](h
    ```
    *This patches your spec-kitty installation to support custom branding.*
 
-4. **Configure your project**:
-   Navigate to your project folder and create the configuration:
+4. **Initialize your project** (starts the server):
    ```bash
    cd /path/to/your-project
+   spec-kitty init .
+   ```
+
+5. **Apply Branding**:
+   ```bash
    mkdir -p .kittify
    # Copy the template
    cp /path/to/spec-kitty-custom-branding/templates/branding.json .kittify/
    ```
 
-5. **Customize** (optional):
+6. **Customize** (optional):
    Edit `.kittify/branding.json` to change the project name or colors.
 
-6. **Start the dashboard**:
+7. **Open the dashboard**:
    ```bash
    spec-kitty dashboard
    ```
+
+   > **Note:** If you need to restart the dashboard later without re-initializing (overwriting files), use:
+   > `~/spec-kitty-custom-branding/scripts/start-dashboard.sh`
 
 ## 📁 Project Structure
 
