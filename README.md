@@ -204,6 +204,22 @@ If you prefer manual setup:
 
 3. **Patch dashboard** (automatic when spec-kitty loads)
 
+### 🚀 Running Multiple Projects (Concurrent Dashboards)
+
+You can run dashboards for multiple projects simultaneously! Each project will automatically find an available port (9237, 9238, etc.).
+
+To start a dashboard **without** re-initializing (and potentially overwriting) your project files, use the included helper script:
+
+```bash
+# From any project directory:
+~/spec-kitty-custom-branding/scripts/start-dashboard.sh
+```
+
+This will:
+1. Start the dashboard server on the next available port
+2. Update the `.kittify/.dashboard` file
+3. Allow you to open it with `spec-kitty dashboard`
+
 ### Custom CSS
 
 Add custom styles by creating `.kittify/custom.css`:
