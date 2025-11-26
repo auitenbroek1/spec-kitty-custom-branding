@@ -51,24 +51,27 @@ A professional light theme and branding customization package for [Spec Kitty](h
 
 2. **Clone this repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/spec-kitty-custom.git
-   cd spec-kitty-custom
+   git clone https://github.com/auitenbroek1/spec-kitty-custom-branding.git
+   cd spec-kitty-custom-branding
    ```
 
 3. **Run the installation script**:
    ```bash
    ./scripts/install-branding.sh
    ```
+   *This patches your spec-kitty installation to support custom branding.*
 
 4. **Configure your project**:
+   Navigate to your project folder and create the configuration:
    ```bash
-   cd your-project
+   cd /path/to/your-project
    mkdir -p .kittify
-   cp /path/to/spec-kitty-custom/templates/branding.json .kittify/
+   # Copy the template
+   cp /path/to/spec-kitty-custom-branding/templates/branding.json .kittify/
    ```
 
 5. **Customize** (optional):
-   Edit `.kittify/branding.json` with your preferences
+   Edit `.kittify/branding.json` to change the project name or colors.
 
 6. **Start the dashboard**:
    ```bash
@@ -78,7 +81,7 @@ A professional light theme and branding customization package for [Spec Kitty](h
 ## 📁 Project Structure
 
 ```
-spec-kitty-custom/
+spec-kitty-custom-branding/
 ├── README.md                           # This file
 ├── branding-schema.json               # JSON schema for validation
 ├── branding_loader.py                 # Configuration loader
@@ -244,7 +247,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/spec-kitty-custom/issues)
+- **Issues**: [GitHub Issues](https://github.com/auitenbroek1/spec-kitty-custom-branding/issues)
 - **Documentation**: [docs/](docs/)
 - **Email**: support@hivestudio.ai
 
