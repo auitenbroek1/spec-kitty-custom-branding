@@ -1,6 +1,6 @@
 # Spec Kitty Custom Branding - Hive Studio Edition
 
-![Hive Studio](https://img.shields.io/badge/Hive_Studio-Professional_Branding-DAA520?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFKSURBVCiRY2AY5oDJyOg/IyPj/1OnTv1nYGBgAAEQGwQYsQUgIyPj/xMnTvxnYmL6z8DA8J+RkfE/AwMDA4jNCGIDASMDAwMDIyPjfxCbCSTOxMT0HyaOwcDAwMDIyPgfxGZiYvrPwMDwn5GR8T8jI+N/kDoQH6QOxAaxQWwQGwgYGRn/MzIy/gexGRkZ/zMyMv5nZGT8D5IDYoPUIGwkNRhqGBgYGBgZGf+D2CAaJA4yE6QGxAaxQWwQG8QGsUFsEBvEBrFBbIgYAwMDAwMj438QG8QGsUFskBiIDWKD2CA2kBiDgYEBgwMDAwMDIyPjfxAbxAaxQWwQG8QGsUFsEBvEBrFBbCQ2AwMDAwMj438QG8QGsUFsEBvEBrFBbBAbxAaxQWwQG8QGsRkYGBgYGBkZ/4PYIDZ + WCAA5JjBhBbFBbBAbxAaxQWwQG8QGsZHZAADEBrEZGBgYGBkZGRgYGBh+AwBfPE8m0YIDAQAAAABJRU5ErkJggg==)
+![Hive Studio](https://img.shields.io/badge/Hive_Studio-Professional_Branding-DAA520?style=for-the-badge&logo=hive&logoColor=black)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![WCAG](https://img.shields.io/badge/WCAG-AAA_Compliant-4CAF50?style=flat-square)
 
