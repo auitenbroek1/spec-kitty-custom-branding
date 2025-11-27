@@ -10,6 +10,7 @@ A professional light theme and branding customization package for [Spec Kitty](h
 
 - 🐝 **Hive Studio Branding**: Complete visual identity with gold accents
 - 🎨 **Professional Light Theme**: WCAG AAA compliant (16:1 contrast ratio)
+- 🖼️ **Custom Static Files**: Support for project-specific logos and favicons via `.kittify/static/`
 - ♿ **Accessibility First**: Exceeds all WCAG 2.1 guidelines
 - 🎯 **Easy Installation**: Drop-in replacement for default spec-kitty branding
 - 📱 **Fully Responsive**: Optimized for all devices
@@ -238,6 +239,22 @@ Add custom styles by creating `.kittify/custom.css`:
   color: var(--text-primary);
 }
 ```
+
+### 🖼️ Custom Static Files
+
+You can serve your own static assets (logos, favicons, images) by placing them in `.kittify/static/`.
+
+1. Create the directory:
+   ```bash
+   mkdir -p .kittify/static
+   ```
+2. Add your files (e.g., `my-logo.png`).
+3. Reference them in `branding.json`:
+   ```json
+   "logoPath": "/static/my-logo.png"
+   ```
+
+The dashboard will automatically look in your project's `.kittify/static/` directory first, falling back to the default static files if not found.
 
 ## 🐝 Hive Studio Branding
 

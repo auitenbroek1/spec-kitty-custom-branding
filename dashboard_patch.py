@@ -166,6 +166,9 @@ def install_branding_patch():
         # Replace the function in the module
         dashboard.get_dashboard_html = patched_func
 
+        # Patch the static file handler
+        patch_static_handler(dashboard)
+
         print("✓ Branding patch installed successfully")
         return True
 
@@ -178,3 +181,64 @@ def install_branding_patch():
     except Exception as e:
         print(f"✗ Failed to install branding patch: {e}")
         return False
+
+
+def patch_static_handler(dashboard_module):
+    """
+    Patch the DashboardRequestHandler to serve static files from .kittify/static.
+    """
+    import mimetypes
+    import os
+    
+    # Get the handler class
+    Handler = dashboard_module.DashboardRequestHandler
+    original_do_GET = Handler.do_GET
+    
+    def custom_do_GET(self):
+        """Custom GET handler that checks for project-specific static files first."""
+        # Check if this is a static file request
+        if self.path.startswith('/static/'):
+            # Try to find the file in .kittify/static
+            filename = self.path[len('/static/'):]
+            
+            # Look for .kittify directory
+            current = Path.cwd()
+            kittify_dir = None
+            
+            # First check if we are in the project root (common case)
+            if (current / ".kittify").exists():
+                kittify_dir = current / ".kittify"
+            else:
+                # Search up a few levels
+                temp = current
+                for _ in range(3):
+                    if (temp / ".kittify").exists():
+                        kittify_dir = temp / ".kittify"
+                        break
+                    temp = temp.parent
+            
+            if kittify_dir:
+                custom_static_path = kittify_dir / "static" / filename
+                if custom_static_path.exists() and custom_static_path.is_file():
+                    try:
+                        # Serve the custom file
+                        mime_type, _ = mimetypes.guess_type(custom_static_path.name)
+                        self.send_response(200)
+                        self.send_header('Content-type', mime_type or 'application/octet-stream')
+                        self.send_header('Cache-Control', 'no-cache')
+                        self.end_headers()
+                        
+                        with open(custom_static_path, 'rb') as f:
+                            self.wfile.write(f.read())
+                        return
+                    except Exception as e:
+                        print(f"Error serving custom static file {filename}: {e}")
+                        # Fall through to original handler on error
+        
+        # Fallback to original handler
+        return original_do_GET(self)
+    
+    # Apply the patch
+    Handler.do_GET = custom_do_GET
+    print("✓ Static file handler patched for custom branding")
+
