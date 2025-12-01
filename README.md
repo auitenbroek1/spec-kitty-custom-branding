@@ -212,6 +212,41 @@ If you prefer manual setup:
 
 3. **Patch dashboard** (automatic when spec-kitty loads)
 
+### 🔧 Troubleshooting
+
+**ImportError: attempted relative import with no known parent package**
+
+If you see this error when running the dashboard, you need to patch `dashboard.py` to allow absolute imports.
+
+1. Locate `dashboard.py`:
+   ```bash
+   VENV_PATH=$(pipx list | grep -A1 "spec-kitty-cli" | grep "location:" | awk '{print $2}')
+   nano "$VENV_PATH/specify_cli/dashboard.py"
+   ```
+
+2. Find the import block near the top:
+   ```python
+   # Import branding support
+   try:
+       from .branding_loader import load_branding_config, get_css_variables
+       BRANDING_AVAILABLE = True
+   except ImportError:
+       BRANDING_AVAILABLE = False
+   ```
+
+3. Replace it with:
+   ```python
+   # Import branding support
+   try:
+       try:
+           from .branding_loader import load_branding_config, get_css_variables
+       except ImportError:
+           from branding_loader import load_branding_config, get_css_variables
+       BRANDING_AVAILABLE = True
+   except ImportError:
+       BRANDING_AVAILABLE = False
+   ```
+
 ### 🚀 Running Multiple Projects (Concurrent Dashboards)
 
 You can run dashboards for multiple projects simultaneously! Each project will automatically find an available port (9237, 9238, etc.).

@@ -1,0 +1,16 @@
+--- dashboard.py.orig	2025-12-01 15:00:00.000000000 -0600
++++ dashboard.py	2025-12-01 15:15:00.000000000 -0600
+@@ -16,7 +16,13 @@
+ 
+ # Import branding support
+ try:
+-    from .branding_loader import load_branding_config, get_css_variables
++    try:
++        # Try relative import first (for package execution)
++        from .branding_loader import load_branding_config, get_css_variables
++    except ImportError:
++        # Try absolute import (for direct execution)
++        from branding_loader import load_branding_config, get_css_variables
+     BRANDING_AVAILABLE = True
+ except ImportError:
+     BRANDING_AVAILABLE = False
